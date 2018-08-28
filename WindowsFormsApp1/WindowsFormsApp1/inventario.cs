@@ -22,8 +22,8 @@ namespace WindowsFormsApp1
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            this.cambiosinstock();
-            this.cambiopocostock();
+            this.Cambiosinstock();
+            this.Cambiopocostock();
         }
 
         void Llenardatagrid()
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
             MySqlCommand codigo = new MySqlCommand();
             MySqlConnection conectanos = new MySqlConnection();
             codigo.Connection = conectar;
-            codigo.CommandText = ("SELECT id,nombre,stock,precio,distribuidor FROM inventario ;");
+            codigo.CommandText = ("SELECT id,producto,stock,precio,distribuidor FROM inventario ;");
 
             MySqlDataAdapter data = new MySqlDataAdapter(codigo);
             DataTable dt = new DataTable();
@@ -49,10 +49,8 @@ namespace WindowsFormsApp1
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-        private void cambiosinstock()
+
+        private void Cambiosinstock()
         {
             foreach (DataGridViewRow row in this.dataGridView1.Rows)
             {
@@ -63,7 +61,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        private void cambiopocostock()
+        private void Cambiopocostock()
         {
             foreach (DataGridViewRow row in this.dataGridView1.Rows)
             {
@@ -76,8 +74,6 @@ namespace WindowsFormsApp1
         }
 
         private void button4_Click(object sender, EventArgs e)
-
-
         {
             this.Hide();
         }
@@ -95,6 +91,21 @@ namespace WindowsFormsApp1
             codigo.CommandText = ("delete from inventario where id='" + id.ToString() + "'");
             codigo.ExecuteNonQuery();
             dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
+            Cambiarproducto cambiarproducto = new Cambiarproducto(id);
+            cambiarproducto.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Llenardatagrid();
+            Cambiopocostock();
+            Cambiosinstock();
+
         }
     }
 }

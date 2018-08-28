@@ -52,6 +52,12 @@
     <Compile Include="AsignarTareas.Designer.cs">
       <DependentUpon>AsignarTareas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cambiarproducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cambiarproducto.Designer.cs">
+      <DependentUpon>Cambiarproducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AsignarTareas.resx">
       <DependentUpon>AsignarTareas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cambiarproducto.resx">
+      <DependentUpon>Cambiarproducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
