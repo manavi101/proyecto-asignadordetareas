@@ -75,5 +75,26 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+
+
+        {
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
+            MySqlConnection conectar = new MySqlConnection("server =localhost; user id =root; password =1234; persistsecurityinfo = True; port =3306; database =proyecto; SslMode = none;");
+            conectar.Open();
+
+            MySqlCommand codigo = new MySqlCommand();
+            MySqlConnection conectanos = new MySqlConnection();
+            codigo.Connection = conectar;
+            codigo.CommandText = ("delete from inventario where id='" + id.ToString() + "'");
+            codigo.ExecuteNonQuery();
+            dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+        }
     }
 }
