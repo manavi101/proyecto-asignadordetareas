@@ -60,25 +60,25 @@ INSERT INTO `asignartareas` (`id`,`sector`,`rol`,`empleado`,`Fechainicial`,`Fech
 DROP TABLE IF EXISTS `inventario`;
 CREATE TABLE `inventario` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL,
-  `stock` varchar(45) NOT NULL,
-  `precio` varchar(45) NOT NULL,
+  `producto` varchar(45) NOT NULL,
+  `stock` int(10) unsigned NOT NULL,
+  `precio` int(10) unsigned NOT NULL,
   `distribuidor` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `inventario`
 --
 
 /*!40000 ALTER TABLE `inventario` DISABLE KEYS */;
-INSERT INTO `inventario` (`id`,`nombre`,`stock`,`precio`,`distribuidor`) VALUES 
- (1,'GTX1060','3','10000','NVIDIA'),
- (2,'GTX1070','5','15000','NVIDIA'),
- (3,'RX550','2','7000','AMD'),
- (4,'RX560','1','12000','AMD'),
- (5,'I5 8400','4','6000','INTEL'),
- (6,'I3 8100','0','4000','INTEL');
+INSERT INTO `inventario` (`id`,`producto`,`stock`,`precio`,`distribuidor`) VALUES 
+ (1,'GTX1060',3,10000,'NVIDIA'),
+ (2,'GTX1070',5,15000,'NVIDIA'),
+ (3,'RX550',2,7000,'AMD'),
+ (5,'I5 8400',4,6000,'INTEL'),
+ (6,'I3 8100',0,4000,'INTEL'),
+ (7,'FX8320',3,3000,'AMD');
 /*!40000 ALTER TABLE `inventario` ENABLE KEYS */;
 
 
