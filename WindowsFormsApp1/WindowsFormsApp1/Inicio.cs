@@ -15,36 +15,32 @@ namespace WindowsFormsApp1
     {
         public string usuario9;
         
-
         public Inicio()
-        {
-            
+        { 
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AsignarTareas asignar = new AsignarTareas(usuario9);
-            asignar.Show();
+                AsignarTareas asignar = new AsignarTareas(usuario9);
+                asignar.Show();
         }
 
-            private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
+                this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            Vertareas vertareas = new Vertareas(usuario9);
-            vertareas.Show();
-            
+                Vertareas vertareas = new Vertareas(usuario9);
+                vertareas.Show();            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            inventario inventario = new inventario();
-            inventario.Show();
+                inventario inventario = new inventario();
+                inventario.Show();
         }
     }
 }

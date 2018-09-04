@@ -14,46 +14,32 @@ namespace WindowsFormsApp1
 {
     public partial class Vertareas : Form
     {
+        MySqlConnection conectar = new MySqlConnection("server =localhost; user id =root; password =1234; persistsecurityinfo = True; port =3306; database =proyecto; SslMode = none;");
+        MySqlCommand codigo = new MySqlCommand();
+        MySqlConnection conectanos = new MySqlConnection();
         public string auxiliar;
         public string usuario8;
 
-
         public Vertareas(string usuario7)
         {
-
             InitializeComponent();
             usuario8 = usuario7;
             averiguarempleado();
             admin();
             llenardatagrid();
-
         }
 
-
-
-        private void Vertareas_Load(object sender, EventArgs e)
-        {
-        }
         void averiguarempleado()
         {
-
-
-
-            MySqlConnection conectar = new MySqlConnection("server =localhost; user id =root; password =1234; persistsecurityinfo = True; port =3306; database =proyecto; SslMode = none;");
-            conectar.Open();
-
-            MySqlCommand codigo = new MySqlCommand();
-            MySqlConnection conectanos = new MySqlConnection();
-            codigo.Connection = conectar;
-            codigo.CommandText = ("select * from proyecto.login where usuario='" + usuario8 + "' ;");
-
-            MySqlDataReader leer = codigo.ExecuteReader();
-            while (leer.Read())
-            {
-                auxiliar = leer.GetString("empleado");
-            }
-            conectar.Close();
-
+                conectar.Open();
+                codigo.Connection = conectar;
+                codigo.CommandText = ("select * from proyecto.login where usuario='" + usuario8 + "' ;");
+                MySqlDataReader leer = codigo.ExecuteReader();
+                while (leer.Read())
+                {
+                    auxiliar = leer.GetString("empleado");
+                }
+                conectar.Close();
         }
         void llenardatagrid()
         {
@@ -99,25 +85,15 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+                this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
                 int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
-                MySqlConnection conectar = new MySqlConnection("server =localhost; user id =root; password =1234; persistsecurityinfo = True; port =3306; database =proyecto; SslMode = none;");
                 conectar.Open();
-
-                MySqlCommand codigo = new MySqlCommand();
-                MySqlConnection conectanos = new MySqlConnection();
                 codigo.Connection = conectar;
                 codigo.CommandText = ("delete from asignartareas where id='" + id.ToString() + "'");
                 codigo.ExecuteNonQuery();

@@ -21,46 +21,30 @@ namespace WindowsFormsApp1
         public IniciarSesion()
         {
             InitializeComponent();
-
         }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void IniciarSesion_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public void button1_Click(object sender, EventArgs e)
         {
+                Inicio inicio = new Inicio();
+                MySqlConnection conectar = new MySqlConnection("server =localhost; user id =root; password =1234; persistsecurityinfo = True; port =3306; database =proyecto; SslMode = none;");
+                conectar.Open();
 
-            Inicio inicio = new Inicio();
-            MySqlConnection conectar = new MySqlConnection("server =localhost; user id =root; password =1234; persistsecurityinfo = True; port =3306; database =proyecto; SslMode = none;");
-            conectar.Open();
-
-            MySqlCommand codigo = new MySqlCommand();
-            MySqlConnection conectanos = new MySqlConnection();
-            codigo.Connection = conectar;
-            codigo.CommandText = ("select * from login where usuario = '" + usuario.Text + "' and password = '" + Contraseña.Text + "' ");
-            MySqlDataReader leer = codigo.ExecuteReader();
-            if (leer.Read())
-            {
-                Usuario10 = usuario.Text;
-                inicio.usuario9 = Usuario10;
-                inicio.Show();
-                this.Hide();
-            }
-            else
-            {
-                label3.Visible = true;
-            }
-            conectar.Close();
-
-
+                MySqlCommand codigo = new MySqlCommand();
+                MySqlConnection conectanos = new MySqlConnection();
+                codigo.Connection = conectar;
+                codigo.CommandText = ("select * from login where usuario = '" + usuario.Text + "' and password = '" + Contraseña.Text + "' ");
+                MySqlDataReader leer = codigo.ExecuteReader();
+                if (leer.Read())
+                {
+                    Usuario10 = usuario.Text;
+                    inicio.usuario9 = Usuario10;
+                    inicio.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    label3.Visible = true;
+                }
+                conectar.Close();
         }
     }
 }
