@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
                     Auxiliar = leer.GetInt32("id");
                     Auxiliar++;
                 }
+                conectar.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

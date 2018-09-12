@@ -60,6 +60,7 @@ namespace WindowsFormsApp1
                     string aux = leer.GetString("sector");
                     comboBox1.Items.Add(aux);
                 }
+                conectar.Close();
         }
         void llenarcombo2()
         {
@@ -72,6 +73,7 @@ namespace WindowsFormsApp1
                     string aux = leer.GetString("rol");
                     comboBox2.Items.Add(aux);
                 }
+                conectar.Close();
         }
         void llenarcombo3()
         {
@@ -82,7 +84,8 @@ namespace WindowsFormsApp1
                 while (leer.Read())
                 {
                     Auxiliar = leer.GetString("idrol");   
-                }        
+                }
+                conectar.Close();
         }
         void llenarcombo4()
         {
@@ -96,6 +99,7 @@ namespace WindowsFormsApp1
                     comboBox3.Items.Add(aux);
                 }
                 comboBox3.Items.Remove("admin");
+                conectar.Close();
         }
         void asignartareasid()
         {
@@ -107,7 +111,8 @@ namespace WindowsFormsApp1
                 {
                     Auxiliar1 = leer.GetInt32("id");
                     Auxiliar1++;
-                }   
+                }
+                conectar.Close();
         }  
         void Asignarcat1(string usuario)
         {
@@ -120,6 +125,7 @@ namespace WindowsFormsApp1
                 {
                     Auxiliar3 = leer.GetInt32("rol");  
                 }
+                conectar.Close();
         }
         void asignarcat2()
         {
@@ -132,6 +138,7 @@ namespace WindowsFormsApp1
                 {
                     Auxiliar4 = leer.GetInt32("categoria");
                 }
+                conectar.Close();
         }
         void asignarcat3()
         {          
@@ -144,6 +151,7 @@ namespace WindowsFormsApp1
             {
                 Auxiliar3 = leer.GetInt32("categoria");
             }
+            conectar.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

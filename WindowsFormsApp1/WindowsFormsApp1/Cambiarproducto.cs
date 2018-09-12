@@ -41,6 +41,7 @@ namespace WindowsFormsApp1
                     aux = leer.GetString("distribuidor");
                     textBox4.Text = aux;
                 }
+                conectar.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
