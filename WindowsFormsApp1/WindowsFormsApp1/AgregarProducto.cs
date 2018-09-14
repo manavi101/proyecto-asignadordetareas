@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         { 
                 conectar.Open();
                 codigo.Connection = conectar;
-                codigo.CommandText = ("SELECT * FROM `inventario` ORDER BY `id` DESC LIMIT 1");
+                codigo.CommandText = ("SELECT * FROM `inventario` ORDER BY `id` DESC LIMIT 0");
                 MySqlDataReader leer = codigo.ExecuteReader();
                 while (leer.Read())
                 {
@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
                 Asignarid();
                 if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" )
             {
-
+                label5.Visible = true;
             }
                 else
                 {
