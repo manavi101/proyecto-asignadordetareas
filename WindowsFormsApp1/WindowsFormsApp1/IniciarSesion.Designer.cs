@@ -88,9 +88,9 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(41, 156);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(247, 13);
+            this.label3.Size = new System.Drawing.Size(243, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "¡Error: contraseña o nombre de usuario oncorrecto!";
+            this.label3.Text = "¡Error: contraseña o nombre de usuario incorrecto!";
             this.label3.Visible = false;
             // 
             // IniciarSesion
