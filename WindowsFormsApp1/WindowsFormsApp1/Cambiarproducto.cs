@@ -51,11 +51,19 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+            {
+                label5.Visible = true;
+            }
+            else
+            {
                 conectar.Open();
                 codigo.Connection = conectar;
                 codigo.CommandText = ("update inventario  set producto='"+textBox1.Text+"', stock='"+textBox2.Text+"', precio='"+textBox3.Text+"', distribuidor='"+textBox4.Text+"' where id='" + id1.ToString() + "' ");
                 codigo.ExecuteNonQuery();
                 this.Hide();
+            }
+            
         }
     }
 }
