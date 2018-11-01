@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cambiarproducto));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -98,7 +99,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(51, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
+            this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Producto";
             // 
@@ -108,7 +109,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(51, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 16);
+            this.label2.Size = new System.Drawing.Size(47, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Stock";
             // 
@@ -118,7 +119,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(51, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 16);
+            this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Precio";
             // 
@@ -128,7 +129,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(51, 168);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 16);
+            this.label4.Size = new System.Drawing.Size(88, 16);
             this.label4.TabIndex = 10;
             this.label4.Text = "Distribuidor";
             // 
@@ -159,6 +160,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cambiarproducto";
             this.Text = "Cambiarproducto";
             this.ResumeLayout(false);
